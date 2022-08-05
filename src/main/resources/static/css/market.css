@@ -1,0 +1,192 @@
+@charset "utf-8";
+
+body{
+	overflow :auto;
+}
+
+#con1{
+	
+	margin-top:155px;
+	/* background-color:blue; */
+	 display:flex;
+	justify-content: center; 
+	
+	
+		}
+
+#con2{
+	
+
+	
+
+		}
+#con3{
+	display:flex;
+	justify-content: center;
+	
+	
+}
+select{
+	width:300px;
+	height:50px;
+	margin:10px;
+}
+#con3 ul{
+	width: 1540px;
+	margin :0 ;
+	padding:0;
+	 } 
+
+ .lid{
+ 	width:200px;
+	height:350px;
+	
+	margin:7px;
+	border-radius: 15px;
+	position:relative;
+	border:3px black solid;
+	float:left;
+	color:black;
+	
+}
+ .li3{
+ 	width:200px;
+	height:350px;
+
+	border-radius: 15px;
+	position:absolute;
+	display:none; 
+	opacity: 1;
+	
+	
+}
+
+.lia input{
+	width:175px;
+	height:55px;
+	border-radius: 10px;
+
+	
+}
+
+.lia{
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	height:200px;
+	
+}
+.lib{
+	display:flex;
+	justify-content: center;
+}
+.listimg{
+	
+	width:185px;
+	height : 120px;
+}
+
+
+.modal { 
+	position: fixed; top: 0; left: 0; 
+	width: 100%; height: 100%;   display: none;   
+	background-color: rgba(0, 0, 0, 0.4); 
+	}
+	
+.modal.show { display: block; } 
+.modal_body { 
+position: fixed; top: 50%; left: 50%; width:488px; height: 700px; 
+padding: 20px; text-align: center;
+ background-color: rgb(255, 255, 255); border-radius: 10px; 
+ box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15); 
+transform: translate(-50%,-50%);  
+/* display:flex;
+justify-content: center;
+align-content: space-between; */
+
+}
+#inbtn{
+	position:absolute;
+	bottom:20px;
+	height: 50px;
+	width:488px;;
+	padding:0;
+	display:flex;
+justify-content: center;
+}
+#inbtn input:nth-child(1){
+	padding:0;
+	margin: 10px;
+	width:80px;
+	height:40px;
+}
+#inbtn input:nth-child(2){
+	padding:0;
+	margin: 10px;
+	width:90px;
+	height:40px;
+}
+p ,h3 , h4{
+	margin :0;
+	display:inline-block;
+	
+}
+h3{
+	widtH: 100px;
+}
+.li5{
+	margin-bottom: 30px;
+}
+th, td {
+	padding:0;
+}
+#basket_tb td{
+	height:40px;
+}
+#delete_bs{
+	margin-top:10px;
+	position:absolute;
+	right:35px;
+}
+#basket_tb{
+	border-collapse: collapse;
+}
+.bscl{
+	position:absolute;
+	left:35px;
+	margin:0;
+}
+p{
+	padding:0;
+}
+#totalinput{
+	margin-top:10px;
+	
+}
+#totalprice{
+	
+	position: absolute;
+	
+}
+.modal_tb{
+	display: flex;
+	justify-content: center;
+}
+.payname{
+	width: 130px;
+	height: 40px;
+	text-align: center;
+	padding:0;
+}
+.ckbox{
+	margin-top:20px;
+	width:17px;
+	height:17px;
+}
+
+
+
+
+
+
+		 

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- sql 분리설정 -->	
+<mapper namespace = "market.MarketDAO">
+
+<select id = "marketlist" resultType="marketdto" >
+select market from proregister 
+</select>
+
+<!-- 상품목록 id로조회 -->
+<select id = "productlist" resultType="marketdto" parameterType="String">
+select * from proregister where id = #{i}
+</select>
+
+<select id = "marketproduct" resultType="marketdto" parameterType="String">
+select * from proregister where market = #{i}
+</select>
+
+<select id = "nameregister" resultType="marketdto" parameterType="String">
+select * from proregister where name = #{i}
+</select>
+
+<select id = "basketlist" resultType="marketdto" parameterType="String">
+select * from shoppingbasket where id = #{i}
+</select>
+
+<select id = "updateinfo" resultType="marketdto" parameterType="marketdto">
+SELECT * FROM proregister
+WHERE id=#{id} AND name=#{name}
+</select>
+<!-- 상품등록 -->
+<insert id="insertproduct" parameterType="marketdto"><!-- parameterType은 메인에서 전송받은 데이터를 데이터페이스에 저장하는타입 -->
+	<!-- insert into member values('mybatis','mybatis','이금희','010-2222-3333','mybatis@a.com','서울시 역삼동') -->
+	insert into proregister values(#{id},#{market},#{name},#{num},#{price},#{explain1},#{imgname},#{state})
+	
+	<!-- memberdto 객체에 #{변수}의 변수값이 해당위치에 설정됨 get메서드 불러오는것과 똑같음 변수명이
+	memberdto 의 변수명과 일치해야함 -->
+	<!--#{}은 mybatis에서 전달하는파라미터   -->
+	<!-- 	String id, marketname,explain,proname ;
+	int pronum,price; -->
+	
+</insert>
+<!-- 장바구니 추가 -->
+<insert id = "insertbasket" parameterType="marketdto">
+	insert into shoppingbasket values (#{id},#{market},#{name},#{price},#{num})
+</insert>
+<!-- 상품 삭제 -->
+<delete id="deletepro" parameterType="String" > 
+delete from proregister where name = #{i}
+</delete>
+<!-- 장바구니 삭제 -->
+<delete id="deletebasket" parameterType="String" > 
+delete from shoppingbasket where name = #{i}
+</delete>
+
+<update id="updatemember" parameterType="marketdto">
+	update proregister 
+	set name =#{name} , num=#{num} , imgname=#{imgname} , price=#{price}, explain1=#{explain1}
+	where name = #{name1}
+</update>
+
+<insert id="insertmarketadmin" parameterType="marketdto"><!-- parameterType은 메인에서 전송받은 데이터를 데이터페이스에 저장하는타입 -->
+	insert into marketadmin values(#{id},#{address},#{market})	
+</insert>
+
+<insert id="insertpayment" parameterType="marketdto"><!-- parameterType은 메인에서 전송받은 데이터를 데이터페이스에 저장하는타입 -->
+	insert into payment values(#{name},#{price})	
+</insert>
+
+<select id = "marketadminlist" resultType="marketdto" parameterType="String">
+select * from marketadmin where id= #{i}
+</select>
+
+</mapper>
